@@ -7,18 +7,21 @@
  */
 package lk.ccns.hibernate.entity;
 
+import lk.ccns.hibernate.emberded.Name;
+
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Student {
     @Id
-    private
-    String id;
-    private String name;
+    private String id;
+    @Embedded
+    private Name name;
     private String address;
 
-    public Student(String id, String name, String address) {
+    public Student(String id, Name name, String address) {
         this.setId(id);
         this.setName(name);
         this.setAddress(address);
@@ -41,11 +44,11 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
+    public Name getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(Name name) {
         this.name = name;
     }
 

@@ -6,6 +6,7 @@ package lk.ccns.hibernate;/*
  * Created by IntelliJ IDEA.
  */
 
+import lk.ccns.hibernate.emberded.Name;
 import lk.ccns.hibernate.entity.Student;
 import lk.ccns.hibernate.util.FactoryConfiguration;
 import org.hibernate.Session;
@@ -15,7 +16,7 @@ public class Demo {
     public static void main(String[] args) {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        session.save(new Student("S001","Supun","Kaluthara"));
+        session.save(new Student("S001",new Name("Supun","Madu","Jayasinghe"),"Kaluthara"));
         transaction.commit();
         session.close();
 
