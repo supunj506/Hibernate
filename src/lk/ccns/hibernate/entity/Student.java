@@ -13,7 +13,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "student")
 public class Student {
     @Id
     private String id;

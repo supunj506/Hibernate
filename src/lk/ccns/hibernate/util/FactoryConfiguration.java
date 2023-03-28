@@ -7,6 +7,7 @@
  */
 package lk.ccns.hibernate.util;
 
+import lk.ccns.hibernate.entity.Laptop;
 import lk.ccns.hibernate.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,7 +18,7 @@ public class FactoryConfiguration {
     private final SessionFactory sessionFactory;
 
     private FactoryConfiguration() {
-        Configuration configuration=new Configuration().configure().addAnnotatedClass(Student.class);
+        Configuration configuration=new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
         sessionFactory = configuration.buildSessionFactory();
     }
     public static FactoryConfiguration getInstance(){
